@@ -7,7 +7,8 @@
 {
    // CDVPluginResult* pluginResult = nil;
     NSString* fileuri = [command.arguments objectAtIndex:0];
-	NSURL* fileURL = [NSURL URLWithString:fileuri];
+  	NSString* escapeduri = [fileuri stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	NSURL* fileURL = [NSURL URLWithString:escapeduri];	
 	_doccontroller = [UIDocumentInteractionController  interactionControllerWithURL:fileURL];
 	_doccontroller.delegate = self;
 	CDVViewController* cont = (CDVViewController*)[ super viewController ];
