@@ -5,7 +5,6 @@
 // Hat tip to Andrew Trice, http://www.tricedesigns.com/2012/08/15/open-with-in-ios-phonegap-apps/
 - (void)launchFile:(CDVInvokedUrlCommand*)command
 {
-   // CDVPluginResult* pluginResult = nil;
     NSString* fileuri = [command.arguments objectAtIndex:0];
   	NSString* escapeduri = [fileuri stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	NSURL* fileURL = [NSURL URLWithString:escapeduri];	
